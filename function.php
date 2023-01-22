@@ -57,7 +57,7 @@
                             <button class="button button1" onclick="window.location.href=#;"type="button" name="View" formaction=# value="View" >Update booking</button>
                         </div>                        
                         <div>
-                            <button class="button button2" onclick="window.location.href=#;" type="button" name="View" formaction=# value="View" >View booking</button>
+                            <button class="button button2" onclick="window.location.href='view_booking.php';" type="button" name="View" formaction=# value="View" >View booking</button>
                         </div> 
                         <div>
                             <button class="button button3" onclick="window.location.href=#;" type="button" name="View" formaction=# value="View" >Delete booking</button>
