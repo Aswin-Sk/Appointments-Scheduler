@@ -50,7 +50,7 @@
             while($row = $q1->fetchArray()){
                 if(strcmp($password,$row[1])==0)
                 {
-                    $_SESSION["pid"]=$id;
+                    $_SESSION["pid"]=$row[0];
                     echo $_SESSION["pid"];
                     $flag=1;
                 }
