@@ -68,3 +68,33 @@ body{
         padding:5px;
         text-align: center;
     }
+    .t2{
+      color: red;
+    }
+    .t1{
+      color: green;
+    }
+    a:link {
+      color:green;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:visited {
+      color: green;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      color:white;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    
+    a:active {
+      color: transparent;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    

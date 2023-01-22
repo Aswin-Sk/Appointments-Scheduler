@@ -14,7 +14,7 @@
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <nav>
         <ul>
-          <li><a href='function.php'> &laquo Back</a></li>
+          <li><a href='view_booking.php'> &laquo Back</a></li>
          </ul>
        </nav>
 </div>
@@ -58,19 +58,21 @@
             $i++;
             //$sql="select * from proftt where slot_id=? and prof_id=?";
             //echo $prof;
-            $q2=$conn->prepare("select * from proftt where slot_id=? and prof_id=?");
-            $q2->bindParam(1,$prof);
-            $q2->bindParam(2,$slotid);
+            $q2=$conn->prepare("select * from freeslots where slot_id=? and prof_id=?");
+            $q2->bindParam(2,$prof);
+            $q2->bindParam(1,$slotid);
             $q=$q2->execute();
             $flag=0;
             while($q->fetchArray())
             {
-                echo '<span style="color=#FF0000"><td  class="t2">' ."Booked Slot". '</td></span>';
+                echo '<td class="t1">' . "Free slot" . '</td>';
                 $flag=1;
             }
             if($flag==0)
             {
-                echo '<td  class="t2">' ."Free Slot". '</td>';
+
+                echo '<td class="t2"><a href="free_slot.php?slotid=' . $slotid. '" style="text-decoration:none; color:red;">' . "Booked slot" . '</a></td>';
+        
             }
         }
         echo '</tr>';
