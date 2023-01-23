@@ -65,7 +65,7 @@
             $flag=0;
             while($q->fetchArray())
             {
-                echo '<td class="t1">' . "Free slot" . '</td>';
+                echo '<td class="t1">'<a href="mark_busy.php?slotid=' . $slotid. '" style="text-decoration:none; color:red;">' . "Free slot" . '</a></td>';
                 $flag=1;
             }
             if($flag==0)
