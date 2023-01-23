@@ -14,7 +14,7 @@
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <nav>
         <ul>
-          <li><a href='view_booking.php'> &laquo Back</a></li>
+          <li><a href='proflogin.php'> &laquo Back</a></li>
          </ul>
        </nav>
 </div>
@@ -63,16 +63,25 @@
             $q2->bindParam(1,$slotid);
             $q=$q2->execute();
             $flag=0;
-            while($q->fetchArray())
+            while($res=$q->fetchArray())
             {
-                echo '<td class="t1">'<a href="mark_busy.php?slotid=' . $slotid. '" style="text-decoration:none; color:red;">' . "Free slot" . '</a></td>';
+                echo '<td class="t1"><a href="mark_busy.php?slotid=' . $slotid. '" style="text-decoration:none; color:green;">' . "Free slot" . '</a></td>';
                 $flag=1;
             }
             if($flag==0)
             {
-
-                echo '<td class="t2"><a href="free_slot.php?slotid=' . $slotid. '" style="text-decoration:none; color:red;">' . "Booked slot" . '</a></td>';
-        
+                $q3=$conn->prepare("select * from bookedslots where slot_id=? and prof_id=?");
+                $q3->bindParam(2,$prof);
+                $q3->bindParam(1,$slotid);
+                $q4=$q3->execute();
+                $flag2=0;
+                while($r=$q4->fetchArray()){
+                    echo '<td class="t2"><a href="free_slot.php?slotid=' . $slotid. '" style="text-decoration:none; color:red;">' . "Booked slot" . '</a></td>';
+                    $flag2=1;
+                }
+                if($flag2==0){
+                    echo '<td class="t3">'."Class Slot".'</td>';
+                }
             }
         }
         echo '</tr>';
