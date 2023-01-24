@@ -4,6 +4,8 @@
     $conn=OpenCon();
     $prof=$_SESSION["pid"];
     $slotid=$_GET["slotid"];
+    // $prof=1;
+    // $slotid=1;
  ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +23,14 @@
             <div class="logo"><span><img src="Nitc_logo.png"> </span></div>
 </html>
 <?php
+$q2 = $conn->prepare('SELECT * from slots where slot_id=?');
+$q2->bindParam(1,$slotid);
+$q=$q2->execute();
+if($row=$q->fetchArray()){
+    echo "Sure you want to mark $row as busy?";
+}
 $q2 = $conn->prepare('DELETE from freeslots where freeslots.slot_id=? and prof_id=?');
-$q2->bindParam(2,$pid);
+$q2->bindParam(2,$prof);
 $q2->bindParam(1,$slotid);
 $q=$q2->execute();
 if($q)
