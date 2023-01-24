@@ -4,10 +4,10 @@
     $conn=OpenCon();
     $prof=$_SESSION["pid"];
     $slotid=$_GET["slotid"];
-    // $prof=1;
-    // $slotid=1;
- ?>
- <!DOCTYPE html>
+    //  $prof=1;
+    //  $slotid=1;
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,27 +21,46 @@
 </head>
         <!-- logo -->
             <div class="logo"><span><img src="Nitc_logo.png"> </span></div>
-</html>
+<body>
 <?php
-$q2 = $conn->prepare('SELECT * from slots where slot_id=?');
+$q2 = $conn->prepare('SELECT slots.starting_time, slots.ending_time,slots.day from slots where slot_id=?');
 $q2->bindParam(1,$slotid);
 $q=$q2->execute();
 if($row=$q->fetchArray()){
-    echo "Sure you want to mark $row as busy?";
-}
-$q2 = $conn->prepare('DELETE from freeslots where freeslots.slot_id=? and prof_id=?');
-$q2->bindParam(2,$prof);
-$q2->bindParam(1,$slotid);
-$q=$q2->execute();
-if($q)
-{
-    
-    echo "<script>alert('Slot marked as busy')</script>";
-    echo "<script>window.location.href='view_booking.php'</script>";
-}
-else
-{
-    echo "<script>alert('Error')</script>";
-    echo "<script>window.location.href='view_booking.php'</script>";
+    echo "Sure you want to mark $row[0]-$row[1] on $row[2] as busy?";
 }
 ?>
+<?php
+     
+     if(isset($_POST['button1'])) {
+        $q2 = $conn->prepare('DELETE from freeslots where freeslots.slot_id=? and prof_id=?');
+        $q2->bindParam(2,$prof);
+        $q2->bindParam(1,$slotid);
+        $q=$q2->execute();
+        if($q)
+        {
+           echo "<script>alert('Slot marked as busy')</script>";
+           echo "<script>window.location.href='view_booking.php'</script>";
+        }
+        else
+        {
+           echo "<script>alert('Error')</script>";
+           echo "<script>window.location.href='view_booking.php'</script>";
+        }
+     }
+     if(isset($_POST['button2'])) {
+        echo "<script>alert('Slot not marked as busy')</script>";
+        echo "<script>window.location.href='view_booking.php'</script>";
+     }
+ ?>
+
+<form method="post">
+        <input type="submit" name="button1"
+                value="Yes">
+         
+        <input type="submit" name="button2"
+                value="No">
+</form>
+</body>
+ 
+</html>
