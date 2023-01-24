@@ -61,7 +61,7 @@
         }
         if(strlen($err) == 0 && strlen($err1) == 0 && strlen($err2) == 0){
             echo "login successful";
-            header('Location: ' . "function.php");
+            header('Location: ' . "view_booking.php");
             die();
         }
 
