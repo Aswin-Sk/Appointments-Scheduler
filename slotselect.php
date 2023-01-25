@@ -9,22 +9,42 @@
 
     if(isset($_POST['checktt']))
     {
+        $flag = 0;
         if(empty($_POST['slot']))
         {
-            $err = '<p>Select a Slot</p>';
+            $err .= '<p>Select a Slot</p>';
+            $flag = 1;
         }
-        else
+        if(empty($_POST['reason']))
         {
-            $q = $conn->prepare("INSERT into bookedslots values (?,?,?);");
-            $q->bindParam(1,$_POST['slot']);
-            $q->bindParam(2,$prof_id);
-            $q->bindParam(3,$rollno);
-            $q->execute();
-            $q = $conn->prepare("Delete from freeslots where slot_id=? and prof_id=?;");
-            $q->bindParam(1,$_POST['slot']);
-            $q->bindParam(2,$prof_id);
-            $q->execute();
-            $err = '<p>BOOKED</p>';
+            $err .= '<p>Enter the Reason for booking</p>';
+            $flag = 1;
+        }
+        if($flag == 0)
+        {
+            $q = $conn->prepare("Select* from bookedslots where roll_no=? and slot_id=?");
+            $q->bindParam(2,$_POST['slot']);
+            $q->bindParam(1,$rollno);
+            $q1=$q->execute();
+            if($row=$q1->fetchArray())
+            {
+                $err .= "<p>You have another booking at this slot</p>";
+            }
+            else
+            {
+                $q = $conn->prepare("INSERT into bookedslots values (?,?,?,?);");
+                $q->bindParam(1,$_POST['slot']);
+                $q->bindParam(2,$prof_id);
+                $q->bindParam(3,$rollno);
+                $q->bindParam(4,$_POST['reason']);
+                $q->execute();
+                $q = $conn->prepare("Delete from freeslots where slot_id=? and prof_id=?;");
+                $q->bindParam(1,$_POST['slot']);
+                $q->bindParam(2,$prof_id);
+                $q->execute();
+                $err = '<p>BOOKED</p>';
+                header('Location: ' . "booking.php");
+            }
         }
     }
 ?>
@@ -77,6 +97,7 @@
                     }
                 ?>
             </table>
+            <label>Reason of Appointment: <input type="text" name="reason"></label>
             <?php echo $err; ?>
             <input type="submit" name="checktt" value="Book">
         </form>
