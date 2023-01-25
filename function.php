@@ -55,10 +55,10 @@
                 <div class="form">
                     <form>
                         <div>
-                            <button class="button button1" onclick="window.location.href=#;"type="button" name="View" formaction=# value="View" >Make booking</button>
+                            <button class="button button1" onclick="window.location.href='booking.php';"type="button" name="View" formaction=# value="View" >Make booking</button>
                         </div>                        
                         <div>
-                            <button class="button button2" onclick="window.location.href=#;" type="button" name="View" formaction=# value="View" >View my bookings</button>
+                            <button class="button button2" onclick="window.location.href='view_booking_student.php';" type="button" name="View" formaction=# value="View" >View my bookings</button>
                         </div> 
                     </form>
                 </div>
