@@ -49,7 +49,7 @@
                 if(strcmp($password,$row[1])==0)
                 {
                     $_SESSION["rollno"]=$row[0];
-                    echo $_SESSION["rollno"];
+                    // echo $_SESSION["rollno"];
                     $flag=1;
                 }
             }
@@ -58,9 +58,9 @@
             }
         }
         if(strlen($err) == 0 && strlen($err1) == 0 && strlen($err2) == 0){
-            echo "login successful";
-            // header('Location: ' . "booking.php");
-            die();
+            // echo "login successful";
+            echo "<script>window.location.href='function.php'</script>";
+            // die();
         }
 
     }
