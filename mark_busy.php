@@ -39,7 +39,7 @@ if($row=$q->fetchArray()){
         $q=$q2->execute();
         if($q)
         {
-           echo "<script>alert('Slot marked as busy')</script>";
+           echo "<script>alert('Slot marked as Unavailable')</script>";
            echo "<script>window.location.href='view_booking.php'</script>";
         }
         else
@@ -49,7 +49,7 @@ if($row=$q->fetchArray()){
         }
      }
      if(isset($_POST['button2'])) {
-        echo "<script>alert('Slot not marked as busy')</script>";
+        echo "<script>alert('Slot not marked as Unavailable')</script>";
         echo "<script>window.location.href='view_booking.php'</script>";
      }
  ?>

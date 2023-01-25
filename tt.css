@@ -67,12 +67,17 @@ body{
         width:5px;
         padding:5px;
         text-align: center;
+        color: black;
     }
     .t2{
       color: red;
     }
     .t1{
       color: green;
+    }
+    .t4{
+      color: darkgoldenrod;
+      text-align: center;
     }
     a:link {
       color:green;

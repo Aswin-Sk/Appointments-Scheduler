@@ -69,7 +69,7 @@
                 $flag=1;
             }
             if($flag==0)
-            {
+            {   //echo $slotid;
                 $q3=$conn->prepare("select * from bookedslots where slot_id=? and prof_id=?");
                 $q3->bindParam(2,$prof);
                 $q3->bindParam(1,$slotid);
@@ -80,7 +80,18 @@
                     $flag2=1;
                 }
                 if($flag2==0){
-                    echo '<td class="t3">'."Class Slot".'</td>';
+                    $p3=$conn->prepare("select * from proftt where slot_id=? and prof_id=?");
+                $p3->bindParam(2,$prof);
+                $p3->bindParam(1,$slotid);
+                $p4=$p3->execute();
+                $flag3=0;
+                while($o=$p4->fetchArray()){
+                    echo '<td class="t3"><a href="free_slot.php?slotid=' . $slotid. '" style="text-decoration:none; color:black;">' . "Class slot" . '</a></td>';
+                    $flag3=1;
+                }
+                if($flag3==0){
+                    echo '<td class="t4">'."Unavailable Slot".'</td>';
+                }
                 }
             }
         }
