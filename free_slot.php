@@ -69,6 +69,7 @@
                         echo "Mail_address:";
                         echo $re[4];
                         echo "\n";
+                        echo '<button><a href="deleteBooking.php" style="text-decoration:none; color:red;">Cancel Booking</a></button>';
                     }
                     }
                     ?>
