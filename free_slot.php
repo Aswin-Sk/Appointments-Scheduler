@@ -73,7 +73,7 @@
                     }
                     echo "Reason:"."\n";
                     echo $res[3];
-                    echo '<button><a href="deleteBooking.php" style="text-decoration:none; color:red;">Cancel Booking</a></button>';
+                    echo '<button><a href="deleteBooking.php?slotid=' . $slotid. '" style="text-decoration:none; color:red;">Cancel Booking</a></button>';
                     }
                     ?>
 
