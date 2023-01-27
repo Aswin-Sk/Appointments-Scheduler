@@ -35,12 +35,12 @@
         
         <div class="flex-container">
         
-          <div onclick="window.location.href='student.php';" class="flex-child magenta">
+          <div onclick="window.location.href='studlogin.php';" class="flex-child magenta">
           <img src="stud.png" class="stud">
           <center>
             <section class="header-content">
                 <a href="studlogin.php">
-                    <button onclick="window.location.href='student.php';">Student</button>
+                    <button onclick="window.location.href='studlogin.php';">Student</button>
                 </a>
 
             </section>
@@ -51,7 +51,7 @@
           <img src="prof.png" class="stud">
             <center>
                 <section class="header-content">
-            <button onclick="window.location.href='professor.php';">Professor</button>
+            <button onclick="window.location.href='proflogin.php';">Professor</button>
               </section>
             </center>
           </div>
