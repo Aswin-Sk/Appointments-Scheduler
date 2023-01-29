@@ -17,7 +17,7 @@
         }
         if(empty($_POST['reason']))
         {
-            $err .= '<p>Enter the Reason for booking</p>';
+            $err .= '<p style="color:red;text-align:center;">Enter the Reason for booking</p>';
             $flag = 1;
         }
         if($flag == 0)
@@ -43,7 +43,7 @@
                 $q->bindParam(2,$prof_id);
                 $q->execute();
                 $err = '<p>BOOKED</p>';
-                header('Location: ' . "booking.php");
+                header('Location: ' . "function.php");
             }
         }
     }
@@ -54,10 +54,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="bg.css">
+        <link rel="stylesheet" href="makebooking.css">
+        <link rel="stylesheet" href="tt.css">
+        <link rel="stylesheet" href="slotselecttt.css">
+        <title>Slots</title>
+
     </head>
     <body>
+    <div class="background">
+           
+           </div>
+       <!-- header -->
+          <header>
+       <nav>
+           <div class="logout" name="View" onclick="window.location.href='function.php';" formaction=# value="View" ><img src="logout.png" class="log" aria-hidden="true"></i>
+           </div> 
+          </nav>
+       <div class="logo"><span><img src="Nitc_logo.png"> </span></div>
+       <section class="header-content;">
+       <h1 style="font-size:57px;">TIMETABLE</h1>';
+       </section>
+       <div class="ttform">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
-            <table border=1>
+        
+            <table id="tttable">
                 <tr>
                     <th class="days">DAY/SLOT</th>
                     <?php
@@ -85,11 +106,11 @@
                             if($row = $result->fetchArray())
                             {
                                 // echo '<td>'.$slot_id.'</td>';
-                                echo '<td><center><input type="radio" name="slot" value="'.$slot_id.'">AVAILABLE</center></td>';
+                                echo '<td style="color:green;"><center> <label> <input type="radio" name="slot" value="'.$slot_id.'">AVAILABLE </label></center></td>';
                             }
                             else
                             {
-                                echo '<td><center>BOOKED</center></td>';
+                                echo '<td style="color:red;"><center>UNAVAILABLE</center></td>';
                             }
                             $i++;
                         }
@@ -97,9 +118,17 @@
                     }
                 ?>
             </table>
-            <label>Reason of Appointment: <input type="text" name="reason"></label>
+            <!-- <label>Reason of Appointment: <input type="text" name="reason"></label> -->
+            <br>
+            <div class="txtarea">
+  <textarea name="reason" rows="4" cols="50" placeholder="Reason of Appointment:"></textarea></div>
+  <br>
             <?php echo $err; ?>
-            <input type="submit" name="checktt" value="Book">
+            <div class="cntrbtn">
+            <input class="button bookingbtn" id="hovbtn" type="submit" name="checktt" value="Book">
+            </div>
         </form>
+        </div>
+        
     </body>
 </html>

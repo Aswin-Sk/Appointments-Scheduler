@@ -14,7 +14,7 @@
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <nav>
         <ul>
-          <li><a href='proflogin.php'> &laquo Back</a></li>
+          <li style="font-size:25px;" id="laquoback"><a href='proflogin.php'> &laquo Back</a></li>
          </ul>
        </nav>
 </div>

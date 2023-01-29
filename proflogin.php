@@ -56,7 +56,7 @@
                 }
             }
             if($flag==0){
-                $err= "invalid credentials";
+                $err= "Invalid Credentials";
             }
         }
         if(strlen($err) == 0 && strlen($err1) == 0 && strlen($err2) == 0){
@@ -73,18 +73,50 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "login.css">
     </head>
     <body>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
-            <input type="text" name="username" placeholder="Username" />
-            <?php echo $err1; ?>
-            <input type="password" name="password" placeholder="Password"  />
-            <?php echo $err2; ?>
-            <?php
-                if(strlen($err)>0)
-                    echo $err;
-            ?>
-            <input type="submit" name ="login" value="Login" />
+        <div class="header">
+          <a href="index.php" class="logo"><span><img src="Nitc_logo.png"> </span><span style="font-size:40px;">NITC Faculty Slot Booking</span></a>
+          <nav>
+        <div class="logout" name="View" onclick="window.location.href='index.php';" formaction=# value="View" ><img src="logout.png" class="log" aria-hidden="true"></i>
+        </div> 
+       </nav>   
+        </div>
+    <div class="cardcard">
+            <div class="card text-center w-49">            
+                <div class="card-header ">
+                <h3><strong>Professor Login</strong></h3>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                    <!-- <h4 class="mar">Enter your Username</h4> -->
+                    <input  class="mar inputbox" type="text" name="username" placeholder="Username" />
+                    <?php echo '<span style="color:red">'.$err1.'</span>'; ?>
+                    <br>
+                    <!-- <h4 class="mar">Enter your Password</h4> -->
+                    <input class="mar inputbox" type="password" name="password" placeholder="Password"  />
+                    <?php echo '<span style="color:red">'.$err2.'</span>'; ?>
+                    <?php
+                        if(strlen($err)>0)
+                            echo '<span style="color:red">'.$err.'</span>';
+                    ?>
+                    <br>
+                    <div class="cntrbtn">
+                    <input class="btn btn-primary mar log-button" type="submit" name ="login" value="Log in" />
+                    </div>
+                    </div>
+                    <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+                </div>
+            </div>
+
+            
         </form>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     </body>
 </html>

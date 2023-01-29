@@ -3,7 +3,7 @@
     include 'dbconnection.php';
     $conn = OpenCon();
     $_SESSION["cday"] = "Monday";
-    $_SESSION["cday"] = flush_database($conn,$_SESSION["cday"]);
+    // $_SESSION["cday"] = flush_database($conn,$_SESSION["cday"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "style.css">
-        <title>Document</title>
+        <title>Home Page</title>
         <style>
             .fa-solid{
                 font-size: 150pt;
@@ -28,7 +28,7 @@
     </head>
     <body>
         <div class="header">
-          <a href="#default" class="logo"><span><img src="Nitc_logo.png"> </span>Online Extra Class Management System</a>
+          <a href="#default" class="logo"><span><img src="Nitc_logo.png"> </span><span style="font-size:40px;">NITC Faculty Slot Booking</span></a>
         </div>
 
         <div class="boody">

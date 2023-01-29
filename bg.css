@@ -1,182 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     margin: 0;
-  }
-  .container-fluid{
+}
+
+.container-fluid {
     height: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
     background: #FFF;
-  }
-  /* ============= Animation background ========= */
-  .background {
-    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+}
+
+
+/* ============= Animation background ========= */
+
+.background {
+    /* background: linear-gradient(132deg, #FC415A, #591BC5, #212335); */
+    background: linear-gradient(132deg, #ffafcc, #ffc8dd, #bde0fe, #a2d2ff);
     background-size: 400% 400%;
     animation: Gradient 15s ease infinite;
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    padding:0;
-    margin:0px;
-  }
-  .cube {
+    padding: 0;
+    margin: 0px;
+}
+
+
+/* ================= Header ============ */
+
+header {
     position: absolute;
-    top: 80vh;
-    left: 45vw;
-    width: 10px;
-    height: 10px;
-    border: solid 1px #D7D4E4;
-    transform-origin: top left;
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);
-    animation: cube 12s ease-in forwards infinite;
-  }
-  .cube:nth-child(2n) {
-    border-color: #FFF ;
-  }
-  .cube:nth-child(2) {
-    animation-delay: 2s;
-    left: 25vw;
-    top: 40vh;
-  }
-  .cube:nth-child(3) {
-    animation-delay: 4s;
-    left: 75vw;
-    top: 50vh;
-  }
-  .cube:nth-child(4) {
-    animation-delay: 6s;
-    left: 90vw;
-    top: 10vh;
-  }
-  .cube:nth-child(5) {
-    animation-delay: 8s;
-    left: 10vw;
-    top: 85vh;
-  }
-  .cube:nth-child(6) {
-    animation-delay: 10s;
-    left: 50vw;
-    top: 10vh;
-  }
-  /* ================= Header ============ */
-  header{
-    position: absolute;
-    top:0%;
+    top: 0%;
     left: 0%;
-    width:100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-  }
-  /* navbar */
-  nav{
+}
+
+
+/* navbar */
+
+nav {
     color: #FFF;
     float: right;
-    margin:30px 90px;
-  }
-  nav ul{
-    list-style: none;
-  }
-  nav ul li {
-    float: left;
-    transition: .3s;
-  }
-  nav ul li a{
-    text-decoration: none;
-    color: #EFEEF5;
-    transition: .5;
-    font-size: 30px;
-    margin-left:16px;
-  }
-  nav ul li:hover a{
-    text-decoration: none;
-    color: white;
-  }
-  nav ul li:hover{
-    height: 45px;
-    padding-top: 30px;
-    margin-top: -30px;
-   text-decoration-color:#FC415A;
-  }
-  /* Logo */
-  .logo{
+    margin: 30px 90px;
+}
+
+.logo {
     width: 35px;
     height: 35px;
     margin: 40px 63px;
     float: left;
-  }
-  img{
-    width:100px;
-    height:120px;
-  }
-  .logo span{
+}
+
+img {
+    width: 100px;
+    height: 120px;
+}
+
+.logo span {
     color: #591BC5;
     font-size: 2em;
     line-height: 1.4;
     padding-left: 5px;
     font-weight: bold;
-  }
-  /* Header content & title & button*/
-  .header-content{
+}
+
+
+/* Header content & title & button*/
+
+.header-content {
     margin: 40px 63px;
     text-align: center;
-    color:  #EFEEF5;
-  }
-  .header-content h1{
+    color: #EFEEF5;
+}
+
+.header-content h1 {
     text-transform: uppercase;
     font-size: 3em;
     letter-spacing: 1px;
-  }
-  .header-content p {
+}
+
+.header-content p {
     font-size: 20px;
     line-height: 1.5;
     margin: 20px auto;
-  }
-  .header-content button{
+}
+
+.header-content button {
     width: 140px;
-    margin:20px 10px;
+    margin: 20px 10px;
     color: #591BC5;
     font-size: 17px;
-    border:1px solid #EFEEF5;
+    border: 1px solid #EFEEF5;
     font-weight: 500;
     background: #EFEEF5;
     border-radius: 20px;
     padding: 10px;
-    cursor:pointer;
+    cursor: pointer;
     transition: .3s;
-  }
-  .header-content button:hover{
+}
+
+.header-content button:hover {
     border-radius: 0;
-  }
-  /* Animate Background*/
-  @keyframes Gradient {
+}
+
+
+/* Animate Background*/
+
+@keyframes Gradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
-  @keyframes cube {
+}
+
+
+/* @keyframes cube {
     from {
-      transform: scale(0) rotate(0deg) translate(-50%, -50%);
-      opacity: 1;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
     }
     to {
-      transform: scale(20) rotate(960deg) translate(-50%, -50%);
-      opacity: 0;
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
     }
-  }
-  .glass-panel {
+} */
+
+.glass-panel {
     color: #fff;
     margin: 40px auto;
-    background-color: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background-color: rgba(167, 167, 167, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     border-radius: 15px;
     text-align: center;
@@ -184,23 +148,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 40px;
-  }
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* padding-right: 40px; */
+}
 
-  
-  /* Extra styles for demo */
-  /* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
-  
-  .glass-panel {  
-    max-width:500px;
-  }
-  
-  .glass-button {
+
+/* Extra styles for demo */
+
+
+/* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
+
+.glass-panel {
+    max-width: 500px;
+}
+
+.glass-button {
     margin: 15px;
     margin-top: 40px;
-  }
-  
-  h1, h1 a {
+}
+
+h1,
+h1 a {
     min-height: 120px;
     width: 90%;
     max-width: 700px;
@@ -208,18 +176,19 @@ body {
     text-align: center;
     margin: 0 auto;
     text-decoration: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
     padding-top: 60px;
-    color: rgba(255,255,255,0.8);
-  }
-  
-  p {
+    color: rgba(65, 0, 0, 0.8);
+}
+
+p {
     width: 80%;
     margin: 0 auto;
-    padding-bottom: 32px;
-    color: rgba(255,255,255,0.6);
-  }
-  .form {
+    padding-bottom: 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form {
     width: 100%;
     height: 100%;
     padding: 40px;
@@ -250,7 +219,7 @@ body {
 .form .input__box {
     width: 100%;
     margin-top: 20px;
-    flex:content;
+    flex: content;
     justify-content: center;
 }
 
@@ -272,7 +241,7 @@ body {
 }
 
 input::placeholder {
-    color:black;
+    color: black;
 }
 
 .form .input__box input[type="submit"] {
@@ -285,9 +254,10 @@ input::placeholder {
     justify-content: center;
     margin-left: 45px;
 }
-.button{
-  width: 100%;
-    color: #fff;
+
+.button {
+    width: 100%;
+    color: rgb(0, 0, 0);
     text-align: center;
     border: none;
     outline: none;
@@ -295,34 +265,51 @@ input::placeholder {
     padding: 10px 20px;
     letter-spacing: 1px;
     border-radius: 35px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
     cursor: pointer;
+    transition: .3s;
 }
-.button :hover{
-  color: #FC415A;
+
+#hovbtn:hover {
+    color: #178bff;
+    transform: scale(1.1);
 }
+
+
 /* .logout{
   background-image:url("download.jfif");
   background-size: cover;
 
 } */
-.fa-solid{
-  margin: 40px 63px;
-  color: black;
-  font-size: 40pt;
-  cursor: pointer;
+
+.fa-solid {
+    margin: 40px 63px;
+    color: black;
+    font-size: 40pt;
+    cursor: pointer;
 }
-.log{
-  width: 50px;
-  height: 50px;
-  position: relative;
-  bottom: -40px;
+
+.log {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: -40px;
 }
-.log:hover{
-  cursor: pointer;
+
+.log:hover {
+    cursor: pointer;
+}
+
+#laquoback {
+    list-style: none;
+}
+
+#laquoback a:hover {
+    color: #800f2f;
+    text-decoration: none;
 }

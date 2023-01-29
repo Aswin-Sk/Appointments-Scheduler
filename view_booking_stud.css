@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.allmybook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#bookdetails {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+#bookdetails td,
+#bookdetails th {
+    border: 1px solid #415a77;
+    padding: 4px;
+}
+
+
+/* #bookdetails tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
+
+#bookdetails tr:hover {
+    background-color: #457b9d;
+    color: white;
+}
+
+#bookdetails th {
+    padding: 12px 0px 12px 0px;
+    background-color: #1d3557;
+    color: white;
+}

@@ -1,0 +1,42 @@
+.ttform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.txtarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cntrbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.button {
+    width: 20%;
+    margin: 20px;
+}
+
+#tttable {
+    border-collapse: collapse;
+    height: 310px;
+    width: 105%;
+}
+
+#tttable td,
+#tttable th {
+    border: 1px solid #415a77;
+    padding: 4px;
+}
+
+#tttable td:active {
+    background-color: #457b9d;
+    color: white;
+}

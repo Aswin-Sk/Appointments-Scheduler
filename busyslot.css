@@ -1,0 +1,39 @@
+body {
+    background: linear-gradient(132deg, #ffafcc, #ffc8dd, #bde0fe, #a2d2ff);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.cntrbooking {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.glass-panel {
+    color: black;
+    margin-top: 2em;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 18px;
+}
+
+.newflex {
+    display: flex;
+    justify-content: flex-start;
+    text-align: justify;
+}
