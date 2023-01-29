@@ -2,7 +2,7 @@
     include 'dbconnection.php';
     $conn = OpenCon();
     // $_SESSION["cday"] = flush_database($conn,$_SESSION["cday"]);
-    $prof = $_SESSION["pid"];
+//     $prof = $_SESSION["pid"];
     // $prof=1;
 ?>
 
